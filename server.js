@@ -15,19 +15,20 @@ const port = process.env.PORT || 3000;
 app.engine('hbs', hbs({
   extname: 'hbs',
   defaultLayout: 'main',
-  layoutsDir: __dirname + 'views/layouts'
+  layoutsDir: __dirname + '/views/layouts'
 }));
-app.set( 'views', path.join( __dirname, 'views' ));
-app.set( 'view engine', 'hbs' );
-// To display the public folder
-app.use(express.static(path.join( __dirname, 'public' )));
-// Setting up body parser
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hbs');
+app.use(express.static(path.join(__dirname, 'public')));
+
+// BODY-PARSER
+//Body Parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-// set up method override
+// override with POST having ?_method=DELETE & ?_method=PUT
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(methodOverride('_method'));
-app.use(methodOverride((req, res)=> {
+app.use(methodOverride((req, res) => {
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
     let method = req.body._method;
     delete req.body._method;
@@ -36,11 +37,15 @@ app.use(methodOverride((req, res)=> {
 }));
 
 
+
 // Call in the ROUTES
+app.get('/', (req, res) => {
+  res.render('index', {name: 'Jeremy'})
+})
+
 
 app.listen(port, () => {
   console.log(`Port is listening on ${port}`)
 });
-
 // for testing
-module.exports = app;
+module.exports = { app };
