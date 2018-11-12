@@ -1,7 +1,5 @@
 const chai = require('chai');
-const {
-    app
-} = require('./../server');
+const { app } = require('./../server');
 const chaiHttp = require('chai-http');
 const expect = chai.expect;
 // we need the models for codeSample
