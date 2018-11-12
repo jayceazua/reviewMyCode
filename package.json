@@ -2,19 +2,26 @@
   "name": "reviewMyCode",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jayceazua/reviewMyCode.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jayce Azua & Jeremy James",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jayceazua/reviewMyCode/issues"
   },
-  "homepage": "https://github.com/jayceazua/reviewMyCode#readme"
+  "homepage": "https://github.com/jayceazua/reviewMyCode#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^3.0.0"
+  }
 }
