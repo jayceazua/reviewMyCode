@@ -36,7 +36,7 @@ app.use(methodOverride((req, res) => {
 }));
 
 
-const codeController = require('./controllers/codeSample');
+const codeController = require('./controllers/codeSamples');
 // Call in the ROUTES
 app.use(codeController);
 
