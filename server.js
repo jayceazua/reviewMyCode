@@ -22,7 +22,6 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 // BODY-PARSER
-//Body Parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 // override with POST having ?_method=DELETE & ?_method=PUT
@@ -37,11 +36,10 @@ app.use(methodOverride((req, res) => {
 }));
 
 
-
+const codeController = require('./controllers/codeSample');
 // Call in the ROUTES
-app.get('/', (req, res) => {
-  res.render('index', {name: 'Jeremy'})
-})
+app.use(codeController);
+
 
 
 app.listen(port, () => {
