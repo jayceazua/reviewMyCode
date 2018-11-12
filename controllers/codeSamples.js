@@ -8,6 +8,9 @@ router.get('/', (req, res) => {
 });
 
 // other routes go here
+// show singular
+// edit
+// DELETE
 
 
 module.exports = router
