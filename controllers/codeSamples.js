@@ -28,7 +28,8 @@ router.patch('/codeSamples/:id', (req, res) => {
 });
 
 router.delete('/codeSamples/:id', (req, res) => {
-  res.render('index', {name: req.path})
+  // res.render('index', {name: req.path})
+  
 });
 
 module.exports = router
