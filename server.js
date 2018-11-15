@@ -6,6 +6,8 @@ const methodOverride = require('method-override');
 const hbs = require('express-handlebars');
 const app = express();
 const port = process.env.PORT || 3000;
+const https = require('https')
+const http = require('http')
 
 /*
  database connection goes here
@@ -39,7 +41,6 @@ app.use(methodOverride((req, res) => {
 const codeController = require('./controllers/codeSamples');
 // Call in the ROUTES
 app.use(codeController);
-
 
 
 app.listen(port, () => {
