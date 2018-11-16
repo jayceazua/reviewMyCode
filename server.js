@@ -9,9 +9,9 @@ const port = process.env.PORT || 3000;
 const https = require('https')
 const http = require('http')
 
-/*
- database connection goes here
-*/
+// database connection goes here
+require('./database/mongooseConnection');
+
 
 // Template Engine //
 app.engine('hbs', hbs({
