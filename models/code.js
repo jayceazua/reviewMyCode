@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const CodeSchema = new codeSchema({
-  usersName     : { type: Schema.Types.username, ref: 'User' },
-  title         : { type: String, required: true },
-  text          : { type: String, required: true },
-  createdAt     : { type: Date },
-  updatedAt    :  { type: Date },
-
+  title: { type: String, required: true },
+  description: { type: String, required: true },
+  codeSnippet: {type: String, required: true},
+  linkToRepo: {type: String, required: false},
+  createdAt: { type: Date },
+  updatedAt:  { type: Date },
 });
 
 CodeSchema.pre('save', function(next) {
