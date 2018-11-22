@@ -10,4 +10,5 @@ mongoose.connection.once('open', () => {
 });
 mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection Error:'));
 mongoose.set('useCreateIndex', true);
+mongoose.set('useFindAndModify', false);
 // mongoose.set('debug', true);
