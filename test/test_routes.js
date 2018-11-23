@@ -163,28 +163,3 @@ describe('CRUD Routes: ', () => {
         }).catch(e => e);
     });
 });
-
-// should be moved into it's own file
-// describe('Users:', () => {
-//     describe("Authentication: ", () => {
-//
-//         it("should create new user", (done) => {});
-//
-//         it('should return validation errors if request invalid', (done) => {});
-//
-//         it('should not create user if email in use', (done) => {});
-//
-//         it('should login user and return a auth token', (done) => {});
-//
-//         it('should reject invalid login', (done) => {});
-//
-//         it('should logout', (done) => {});
-//     }); // end of... Authentication: Describe
-
-    // describe("Authorization: ", () => {
-    //
-    //     it("should return 200 if user is authenticated", (done) => {});
-    //
-    //     it("should return 401 if user not authenticated", (done) => {});
-    // }); // end of... Authorization: Describe
-// });
