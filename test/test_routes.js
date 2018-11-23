@@ -20,19 +20,23 @@ describe('CRUD Routes: ', () => {
 
     // INDEX
     it('should index ALL codeSamples on / GET', (done) => {
-        chai.request(app)
-            .get('/')
-            .then((res) => {
-                console.log(res)
-                expect(res).to.have.status(200);
-                // better tests coming soon
-                // need to make sure there is data is in the route... ?
-                CodeSample.find({}).then((codeSamples) => {
-                    expect(codeSamples.length).to.equal(2);
-                }).catch(e => e);
-                return done();
-            })
-            .catch(e => done(e));
+        CodeSample.find({}).then((codeSamples) => { // confirming data is in !
+            chai.request(app)
+                .get('/')
+                .then((res) => {
+                    expect(res).to.have.status(200);
+                    // better tests coming soon
+                    // need to make sure there is data is in the route... ?
+                    expect(res.text).to.have.string(`${codeSamples[0]._id}`)
+                    expect(res.text).to.have.string(`${codeSamples[1]._id}`)
+                    expect(res.text).to.have.string(`${codeSamples[0].title}`)
+                    expect(res.text).to.have.string(`${codeSamples[1].title}`)
+                    expect(res.text).to.have.string(`${codeSamples[0].linkToRepo}`)
+                    expect(res.text).to.have.string(`${codeSamples[1].linkToRepo}`)
+                    return done();
+                })
+                .catch(e => done(e));
+        }).catch(e => e);
     });
     // NEW
     it('should display new form on /codeSamples/new GET', (done) => {
@@ -47,7 +51,7 @@ describe('CRUD Routes: ', () => {
             .catch(e => done(e));
     });
     // CREATE
-    it('should create a SINGLE codeSamples on /codeSamples POST', (done) => {
+    it('should create a SINGLE codeSample on /codeSamples POST', (done) => {
         const demoCodePost = ({
             title: "Worked really hard on this!",
             description: "Checkout my amazing code",
@@ -73,7 +77,7 @@ describe('CRUD Routes: ', () => {
             .catch(e => done(e));
     });
     // SHOW
-    it('should show a SINGLE codeSamples on /codeSamples/<id> GET', (done) => {
+    it('should show a SINGLE codeSample on /codeSamples/<id> GET', (done) => {
         CodeSample.find({}).then((data) => {
             let codeId = String(data[0]._id)
             chai.request(app)
@@ -83,6 +87,11 @@ describe('CRUD Routes: ', () => {
                     expect(res).to.have.header('content-type', 'text/html; charset=utf-8');
                     expect(res.req.path).to.include(codeId);
                     // test if the data is in html ???
+                    expect(res.text).to.have.string(`${data[0]._id}`)
+                    expect(res.text).to.have.string(`${data[0].title}`)
+                    expect(res.text).to.have.string(`${data[0].codeSnippet}`)
+                    expect(res.text).to.have.string(`${data[0].description}`)
+                    expect(res.text).to.have.string(`${data[0].linkToRepo}`)
                     return done();
                 })
                 .catch(e => done(e));
@@ -99,13 +108,18 @@ describe('CRUD Routes: ', () => {
                     expect(res).to.have.header('content-type', 'text/html; charset=utf-8');
                     expect(res.req.path).to.include(`${codeId}/edit`);
                     // test if the data is in html ???
+                    expect(res.text).to.have.string(`${data[0]._id}`)
+                    expect(res.text).to.have.string(`${data[0].title}`)
+                    expect(res.text).to.have.string(`${data[0].codeSnippet}`)
+                    expect(res.text).to.have.string(`${data[0].description}`)
+                    expect(res.text).to.have.string(`${data[0].linkToRepo}`)
                     return done();
                 })
                 .catch(e => done(e))
         }).catch(e => e);
     });
     // UPDATE
-    it('should update a SINGLE codeSamples on /codeSamples/<id> PATCH', (done) => {
+    it('should update a SINGLE codeSample on /codeSamples/<id> PATCH', (done) => {
         CodeSample.find({}).then((data) => {
             let codeId = String(data[0]._id)
             chai.request(app)
