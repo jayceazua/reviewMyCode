@@ -2,4 +2,65 @@
 
 body {
   background-color: tomato;
+  font-family: "Comic Sans MS";
+  /* margin-top: 2em; */
+}
+
+h1 {
+  font-size: 72px;
+  background: -webkit-linear-gradient(#f0f, #0f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-bar {
+  position: sticky;
+  top: 0px;
+  width: 100%;
+}
+
+.nav-links {
+  height: 50px;
+  width: 100%;
+  background: #303030;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: roboto;
+  font-weight: bold;
+}
+
+.nav-btn {
+  text-decoration: none;
+  list-style-type: none;
+  color: #787878;
+  margin-left: 1rem;
+  transition: all 2ms;
+  margin-right: 1rem;
+}
+
+.nav-btn:hover {
+  transform: scale(1.025);
+  color: #ccc;
+}
+
+.nav-btn.names {
+  font-size: 30px;
+  color: #101010;
+}
+
+.nav-btn.names:hover {
+  transform: none;
+}
+
+input[type=text] {
+  background-color:#404040;
+  color: #fff;
+  float: right;
+  padding: 6px;
+  border: none;
+  /* margin-top: 8px; */
+  /* margin-right: 16px; */
+  font-size: 17px;
 }
