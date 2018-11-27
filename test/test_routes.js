@@ -133,7 +133,7 @@ describe('CRUD Routes: ', () => {
                     CodeSample.findOne({title: 'Best code ever!'}).then((codeSample) => {
                         expect(data[0]._id).to.equal(codeSample._id); // make sure it is the same entry
                         expect(data[0].title).to.not.equal(codeSample.title);
-                        expect(data[0].codeSnippet).to.equal(codeSamles.codeSnippet);
+                        expect(data[0].codeSnippet).to.equal(codeSample.codeSnippet);
                     }).catch(e => e);
                     expect(data.length).to.equal(2) // make sure it did not create a 3rd entry
                     // make sure it redirects
