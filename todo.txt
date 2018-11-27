@@ -1,0 +1,4 @@
+add new to navbar
+make codes not dissapper on reload of root
+formatting of snippet urlencoded
+Cast to ObjectId failed for value "…" at path "_id" for model "Code"
