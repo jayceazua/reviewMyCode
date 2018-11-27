@@ -1,0 +1,11 @@
+<!doctype html>
+<h1>Codes</h1>
+
+<div class="row">
+  {{#each codes}}
+    <div class="col-sm-3">
+      <h2><a href="/codeSamples/{{this._id}}">{{this.title}}</a></h2>
+      <h3><a href="{{this.linkToRepo}}">Repository</a></h3>
+    </div>
+  {{/each}}
+</div>
