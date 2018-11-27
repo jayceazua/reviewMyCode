@@ -3,7 +3,7 @@
     <meta name="id" content="{{codes._id}}">
     <h1 style= "font-size:32pt;" >{{codes.title}}</h1>
     <p style= "font-size:16pt;font-style:normal;font-weight:lighter;" >{{codes.description}}</p>
-    <pre> <code> {{codes.codeSnippet}} </code> </pre>
+    <pre> <code> {{{codes.codeSnippet}}} </code> </pre>
     <p style= "font-size:32pt;" ><a href="{{codes.linkToRepo}}">{{codes.linkToRepo}}</a></p>
     <p><a href="/codeSamples/{{codes._id}}/edit">Edit</a></p>
     <p><form method="POST" action="/codeSamples/{{codes._id}}?_method=DELETE">

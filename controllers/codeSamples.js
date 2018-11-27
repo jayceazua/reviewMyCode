@@ -27,12 +27,18 @@ router.post('/codeSamples', (req, res) => {
 });
 // SHOW
 router.get('/codeSamples/:id', (req, res) => {
-  Code.findById(req.params.id).then(codes => {
-    console.log(codes)
-    res.render('code-show', {codes:codes});
-  }).catch(err => {
-    console.log(req.path, err.message);
-  });
+  if (req.params.id.match(/^[0-9a-fA-F]{24}$/)) {
+  // Yes, it's a valid ObjectId, proceed with `findById` call.
+    Code.findById(req.params.id).then(codes => {
+      console.log(codes)
+      res.render('code-show', {codes:codes});
+    }).catch(err => {
+      console.log(req.path, err.message);
+    });
+  }else{
+    console.log("the ID: ", req.params.id, "ain\'t right");
+    res.end();
+  }
 });
 // EDIT
 router.get('/codeSamples/:id/edit', (req, res) => {
@@ -41,7 +47,7 @@ router.get('/codeSamples/:id/edit', (req, res) => {
   })
 });
 // UPDATE
-router.put('/codeSamples/:id', (req, res) => {
+router.patch('/codeSamples/:id', (req, res) => {
   Code.findByIdAndUpdate(req.params.id, req.body).then(codes => {
     res.redirect('/');
   }).catch(err => {
