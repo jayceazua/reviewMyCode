@@ -9,13 +9,13 @@ const CodeSample = require('../models/code');
 chai.use(chaiHttp);
 
 describe('CRUD Routes: ', () => {
-    after(() => {
-        CodeSample.deleteMany({})
-        .exec((err, codePosts) => {
-            if (err) throw err;
-            codePosts.remove();
-        });
-    });
+    // after(() => {
+    //     CodeSample.deleteMany({})
+    //     .exec((err, codePosts) => {
+    //         if (err) throw err;
+    //         codePosts.remove();
+    //     });
+    // });
     beforeEach(populateCodePosts);
 
     // INDEX

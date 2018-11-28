@@ -30,7 +30,6 @@ router.get('/codeSamples/:id', (req, res) => {
   if (req.params.id.match(/^[0-9a-fA-F]{24}$/)) {
   // Yes, it's a valid ObjectId, proceed with `findById` call.
     Code.findById(req.params.id).then(codes => {
-      console.log(codes)
       res.render('code-show', {codes:codes});
     }).catch(err => {
       console.log(req.path, err.message);
@@ -47,15 +46,21 @@ router.get('/codeSamples/:id/edit', (req, res) => {
   })
 });
 // UPDATE
-router.patch('/codeSamples/:id', (req, res) => {
-  Code.findByIdAndUpdate(req.params.id, req.body).then(codes => {
+router.put('/codeSamples/:id', (req, res) => {
+  Code.findByIdAndUpdate(req.params.id, req.body)
+  .then(codes => {
     res.redirect('/');
   }).catch(err => {
-    console.log("put:",req.path, err.message);
+    console.log(req.method, req.path, err.message);
   });
 });
 // DESTROY
 router.delete('/codeSamples/:id', (req, res) => {
+  Code.findByIdAndRemove(req.params.id).then(codes => {
+    res.redirect("/")
+  }).catch(err => {
+    console.log(req.method, req.path, err.message)
+  })
   // res.render('index', {name: req.path})
 
 });
