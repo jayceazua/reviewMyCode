@@ -5,58 +5,62 @@ const Code = require('../models/code');
 
 // INDEX
 router.get('/', (req, res) => {
-  Code.find().then(codes => {
+  Code.find({}).then((codes) => {
     // console.log(codes)
-    res.render('code-index', { codes: codes });
-  }).catch(err => {
+    res.render('code-index', { codes });
+  }).catch((err) => {
     console.log(req.path, err.message);
   })
 });
 // NEW
 router.get('/codeSamples/new', (req,res) => {
-  res.render('code-new', {})
+  res.render('code-new')
 });
 // CREATE
 router.post('/codeSamples', (req, res) => {
-  Code.create(req.body).then(codes => {
+  Code.create(req.body).then((codes) => {
     // console.log(codes);
     res.redirect('/');
-  }).catch(err => {
+  }).catch((err )=> {
     console.log(req.path, err.message);
   })
 });
 // SHOW
 router.get('/codeSamples/:id', (req, res) => {
-  if (req.params.id.match(/^[0-9a-fA-F]{24}$/)) {
+  // if (req.params.id.match(/^[0-9a-fA-F]{24}$/)) {
   // Yes, it's a valid ObjectId, proceed with `findById` call.
     Code.findById(req.params.id).then(codes => {
-      res.render('code-show', {codes:codes});
+      res.render('code-show', { codes });
     }).catch(err => {
       console.log(req.path, err.message);
     });
-  }else{
+  // } else{
     console.log("the ID: ", req.params.id, "ain\'t right");
     res.end();
-  }
+  // }
 });
 // EDIT
 router.get('/codeSamples/:id/edit', (req, res) => {
-  Code.findById(req.params.id, function(err, codes){
+  Code.findById(req.params.id, function(err, codes) {
+    if (err) {
+      res.send(err.message)
+    }
+    // this is not consistent with the above code
     res.render('code-edit', { codes: codes });
   })
 });
 // UPDATE
-router.put('/codeSamples/:id', (req, res) => {
-  Code.findByIdAndUpdate(req.params.id, req.body)
-  .then(codes => {
+router.put('/codeSamples/:id', (req, res) => { // put difference patch
+  Code.findByIdAndUpdate(req.params.id, req.body).then(codes => { // I want to know the difference in each parameter and difference in params and body
     res.redirect('/');
   }).catch(err => {
+    // purpose of why you are using .method and .path
     console.log(req.method, req.path, err.message);
   });
 });
 // DESTROY
 router.delete('/codeSamples/:id', (req, res) => {
-  Code.findByIdAndRemove(req.params.id).then(codes => {
+  Code.findByIdAndRemove(req.params.id).then(() => {
     res.redirect("/")
   }).catch(err => {
     console.log(req.method, req.path, err.message)
