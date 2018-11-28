@@ -6,7 +6,6 @@ const Code = require('../models/code');
 // INDEX
 router.get('/', (req, res) => {
   Code.find({}).then((codes) => {
-    // console.log(codes)
     res.render('code-index', { codes });
   }).catch((err) => {
     console.log(req.path, err.message);
@@ -30,14 +29,27 @@ router.get('/codeSamples/:id', (req, res) => {
     res.render('code-show', { code })
   }).catch(err => res.send(err.message))
 });
+
+// router.get('/codeSamples/:id', (req, res) => {
+//  // if (req.params.id.match(/^[0-9a-fA-F]{24}$/)) {
+//  // Yes, it's a valid ObjectId, proceed with `findById` call.
+//    Code.findById(req.params.id).then(codes => {
+//      res.render('code-show', { codes });
+//    }).catch((err) => {
+//      console.log(req.path, err.message);
+//    });
+//  // } else{
+//    // console.log("the ID: ", req.params.id, "ain\'t right");
+//    // res.end();
+//  // }
+// });
+
 // EDIT
 router.get('/codeSamples/:id/edit', (req, res) => {
-  Code.findById(req.params.id, function(err, codes) {
-    if (err) {
-      res.send(err.message)
-    }
-    // this is not consistent with the above code
-    res.render('code-edit', { codes: codes });
+  Code.findById(req.params.id).then(codes => {
+    res.render('code-edit', {codes});
+  }).catch(err => {
+    console.log(req.path, err.message)
   })
 });
 // UPDATE
@@ -56,8 +68,6 @@ router.delete('/codeSamples/:id', (req, res) => {
   }).catch(err => {
     console.log(req.method, req.path, err.message)
   })
-  // res.render('index', {name: req.path})
-
 });
 
 module.exports = router
