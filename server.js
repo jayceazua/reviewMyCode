@@ -6,8 +6,8 @@ const methodOverride = require('method-override');
 const hbs = require('express-handlebars');
 const app = express();
 const port = process.env.PORT || 3000;
-const https = require('https')
-const http = require('http')
+const https = require('https');
+const http = require('http');
 
 // database connection goes here
 require('./database/mongooseConnection');

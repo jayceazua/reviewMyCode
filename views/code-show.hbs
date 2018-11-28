@@ -1,19 +1,19 @@
 <div class="row">
   <div class="col-sm-6 col-sm-offset-1">
 
-    <meta name="id" content="{{codes._id}}">
+    <meta name="id" content="{{code._id}}">
 
-    <h1 style= "font-size:32pt;" >{{codes.title}}</h1>
+    <h1 style= "font-size:32pt;" >{{code.title}}</h1>
 
-    <p style= "font-size:16pt;font-style:normal;font-weight:lighter;" >{{codes.description}}</p>
+    <p style= "font-size:16pt;font-style:normal;font-weight:lighter;" >{{code.description}}</p>
 <!-- explain this ... -->
-    <pre> <code> {{{codes.codeSnippet}}} </code> </pre>
+    <pre> <code> {{{code.codeSnippet}}} </code> </pre>
 
-    <p><a href="{{codes.linkToRepo}}">{{codes.linkToRepo}}</a></p>
+    <p><a href="{{code.linkToRepo}}">{{code.linkToRepo}}</a></p>
 
-    <p><a href="/codeSamples/{{codes._id}}/edit">Edit</a></p>
+    <p><a href="/codeSamples/{{code._id}}/edit">Edit</a></p>
 
-    <p><form method="POST" action="/codeSamples/{{codes._id}}?_method=DELETE">
+    <p><form method="POST" action="/codeSamples/{{code._id}}?_method=DELETE">
         <button class="btn btn-primary" type="submit">Delete</button>
 
     </form></p>
