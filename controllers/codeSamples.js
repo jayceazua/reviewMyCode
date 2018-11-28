@@ -6,7 +6,6 @@ const Code = require('../models/code');
 // INDEX
 router.get('/', (req, res) => {
   Code.find({}).then((codes) => {
-      console.log(codes)
     res.render('code-index', { codes });
   }).catch((err) => {
     res.send(err.message)
