@@ -53,14 +53,18 @@ router.get('/codeSamples/:id/edit', (req, res) => {
   })
 });
 // UPDATE
-router.put('/codeSamples/:id', (req, res) => { // put difference patch
-  Code.findByIdAndUpdate(req.params.id, req.body).then(codes => { // I want to know the difference in each parameter and difference in params and body
-    res.redirect('/');
+
+
+router.patch('/codeSamples/:id', (req, res) => { // put difference patch
+  Code.findByIdAndUpdate(req.params.id, req.body).then((codes) => {
+    res.redirect(`/codeSamples/${req.params.id}`);
   }).catch(err => {
     // purpose of why you are using .method and .path
     console.log(req.method, req.path, err.message);
   });
 });
+
+
 // DESTROY
 router.delete('/codeSamples/:id', (req, res) => {
   Code.findByIdAndRemove(req.params.id).then(() => {
