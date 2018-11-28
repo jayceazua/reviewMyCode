@@ -11,10 +11,12 @@ router.get('/', (req, res) => {
     res.send(err.message)
   })
 });
+
 // NEW
 router.get('/codeSamples/new', (req,res) => {
   res.render('code-new')
 });
+
 // CREATE
 router.post('/codeSamples', (req, res) => {
   Code.create(req.body).then(() => {
@@ -23,13 +25,13 @@ router.post('/codeSamples', (req, res) => {
     res.send(err.message)
   })
 });
+
 // SHOW
 router.get('/codeSamples/:id', (req, res) => {
   Code.findById(req.params.id).then((code) => {
     res.render('code-show', { code })
   }).catch(err => res.send(err.message))
 });
-
 
 // EDIT
 router.get('/codeSamples/:id/edit', (req, res) => {
@@ -51,7 +53,7 @@ router.patch('/codeSamples/:id', (req, res) => { // put difference patch
 });
 
 
-// DESTROY
+// DELETE
 router.delete('/codeSamples/:id', (req, res) => {
   Code.findByIdAndRemove(req.params.id).then(() => {
     res.redirect("/")
