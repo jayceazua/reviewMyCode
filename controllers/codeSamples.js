@@ -7,9 +7,7 @@ const Code = require('../models/code');
 router.get('/', (req, res) => {
   Code.find({}).then((codes) => {
     res.render('code-index', { codes });
-  }).catch((err) => {
-    res.send(err.message)
-  })
+  }).catch((err) => res.send(err.message))
 });
 
 // NEW
@@ -21,9 +19,7 @@ router.get('/codeSamples/new', (req,res) => {
 router.post('/codeSamples', (req, res) => {
   Code.create(req.body).then(() => {
     res.redirect('/');
-  }).catch((err)=> {
-    res.send(err.message)
-  })
+  }).catch((err)=> res.send(err.message))
 });
 
 // SHOW
@@ -37,19 +33,14 @@ router.get('/codeSamples/:id', (req, res) => {
 router.get('/codeSamples/:id/edit', (req, res) => {
   Code.findById(req.params.id).then(codes => {
     res.render('code-edit', {codes});
-  }).catch(err => {
-    console.log(req.path, err.message)
-  })
+  }).catch(err => res.send(err.message))
 });
 
 // UPDATE
 router.patch('/codeSamples/:id', (req, res) => { // put difference patch
   Code.findByIdAndUpdate(req.params.id, req.body).then((codes) => {
-    res.redirect(`/codeSamples/${req.params.id}`);
-  }).catch((err) => {
-    // purpose of why you are using .method and .path
-    res.send(err.message)
-  });
+    res.redirect(`/`);
+  }).catch((err) => res.send(err.message));
 });
 
 
@@ -57,9 +48,7 @@ router.patch('/codeSamples/:id', (req, res) => { // put difference patch
 router.delete('/codeSamples/:id', (req, res) => {
   Code.findByIdAndRemove(req.params.id).then(() => {
     res.redirect("/")
-  }).catch((err) => {
-    res.send(err.message)
-  })
+  }).catch((err) => res.send(err.message))
 });
 
 module.exports = router

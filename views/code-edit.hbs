@@ -1,11 +1,4 @@
-<div class="row">
-  <div class="col-sm-6 col-sm-offset-3">
-    <form method="POST" action="/codeSamples/{{codes._id}}?_method=PUT">
-      {{> code-form }}
-      <!-- BUTTON -->
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">Save Edits</button>
-      </div>
-    </form>
-  </div>
-</div>
+<form method="POST" action="/codeSamples/{{codes._id}}?_method=PATCH">
+    {{> code-form }}
+    <button type="submit">Save Edits</button>
+</form>
