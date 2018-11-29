@@ -12,7 +12,6 @@ const http = require('http');
 // database connection goes here
 require('./database/mongooseConnection');
 
-
 // Template Engine //
 app.engine('hbs', hbs({
   extname: 'hbs',
@@ -37,11 +36,9 @@ app.use(methodOverride((req, res) => {
   }
 }));
 
-
 const codeController = require('./controllers/codeSamples');
 // Call in the ROUTES
 app.use(codeController);
-
 
 app.listen(port, () => {
   console.log(`Port is listening on ${port}`)

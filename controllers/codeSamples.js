@@ -31,17 +31,18 @@ router.get('/codeSamples/:id', (req, res) => {
 });
 
 // router.get('/codeSamples/:id', (req, res) => {
+//   console.log(req.params)
 //  // if (req.params.id.match(/^[0-9a-fA-F]{24}$/)) {
 //  // Yes, it's a valid ObjectId, proceed with `findById` call.
-//    Code.findById(req.params.id).then(codes => {
-//      res.render('code-show', { codes });
+//    Code.findById(req.params.id).then(code => {
+//      res.render('code-show', { code });
 //    }).catch((err) => {
 //      console.log(req.path, err.message);
 //    });
-//  // } else{
-//    // console.log("the ID: ", req.params.id, "ain\'t right");
-//    // res.end();
-//  // }
+// //  } else{
+// //    console.log("the ID: ", req.params.id, "ain\'t right");
+// //    res.end();
+// //  }
 // });
 
 // EDIT
