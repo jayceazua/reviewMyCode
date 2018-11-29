@@ -1,4 +1,0 @@
-reformat nav-bar
-SOLVED  make codes not disappear on running of tests
-SOLVED  formatting of snippet url-encoded problems
-Cast to ObjectId failed for value "…" at path "_id" for model "Code" on SHOW route  --not critical
