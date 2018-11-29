@@ -6,7 +6,7 @@ const CodeSchema = new Schema({
     type: String,
     required: true
   },
-  description: {
+  description: { // might need this ...
     type: String,
     required: true
   },
