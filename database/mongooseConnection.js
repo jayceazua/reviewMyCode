@@ -1,11 +1,14 @@
 const mongoose = require('mongoose');
  // Set a Mongoose Promise Library
 mongoose.Promise = global.Promise;
-const dbURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/code_review';
-// `mongodb://${dbuser}:${dbpassword}@ds115283.mlab.com:15283/${dbname}`
+const dbname = process.env.DB_NAME;
+const dbpassword = process.env.DB_PASSWORD;
+const dbuser = process.env.DB_USER;
+const dbURI = process.env.MONGODB_URI || `mongodb://${dbuser}:${dbpassword}@ds115283.mlab.com:53552/${dbname}`;
+//
 mongoose.connect(dbURI, { useNewUrlParser: true });
 mongoose.connection.once('open', () => {
-  console.log('Database connected.')
+  console.log('Rotten Potatoes\' database is up!')
 });
 mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection Error:'));
 mongoose.set('useCreateIndex', true);
