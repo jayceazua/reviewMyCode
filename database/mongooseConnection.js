@@ -5,7 +5,7 @@ const dbURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/code_review'
 // `mongodb://${dbuser}:${dbpassword}@ds115283.mlab.com:15283/${dbname}`
 mongoose.connect(dbURI, { useNewUrlParser: true });
 mongoose.connection.once('open', () => {
-  console.log('Rotten Potatoes\' database is up!')
+  console.log('Database connected.')
 });
 mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection Error:'));
 mongoose.set('useCreateIndex', true);
