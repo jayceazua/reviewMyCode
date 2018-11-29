@@ -1,62 +1,11 @@
-<!-- Main -->
-<main id="main" class="grid">
-    <div class="image">
-        <ul>
-            {{#each codes}}
-                <li>
-                    <p><a href="/codeSamples/{{this._id}}">{{this.title}}</a></p>
-                    <img src="https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-                </li>
-            {{/each}}
-        </ul>
+<!doctype html>
+<h1>Codes</h1>
+
+<div class="row">
+  {{#each codes}}
+    <div class="col-sm-3">
+      <h2><a href="/codeSamples/{{this._id}}">{{this.title}}</a></h2>
+      <h3><a href="{{this.linkToRepo}}">Repository</a></h3>
     </div>
-</main>
-
-<!--
-<ul>
-
-    <li>
-        <p>The Diomand Age</p>
-        <img src="https://images.pexels.com/photos/957312/chess-checkmated-chess-pieces-black-white-957312.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-    </li>
-    <li>
-        <p>Shamgai Year 1</p>
-        <img src="https://images.pexels.com/photos/114820/pexels-photo-114820.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-    </li>
-    <li>
-        <p>Wine(s)</p>
-        <img src="https://images.pexels.com/photos/764880/pexels-photo-764880.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-    </li>
-    <li>
-        <p>Making-of v.5</p>
-        <img src="https://images.pexels.com/photos/702139/pexels-photo-702139.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-    </li>
-    <li>
-        <p>2011-2001</p>
-        <img src="https://images.pexels.com/photos/248280/pexels-photo-248280.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-    </li>
-    <li>
-        <p>The Jagged Orbit</p>
-        <img src="https://images.pexels.com/photos/277017/pexels-photo-277017.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-    </li>
-    <li>
-        <p>Festival Scope</p>
-        <img src="https://images.pexels.com/photos/52500/horse-herd-fog-nature-52500.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-    </li>
-    <li>
-        <p>Visual Identity</p>
-        <img src="https://images.pexels.com/photos/57905/pexels-photo-57905.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-    </li>
-    <li>
-        <p>Unreleased</p>
-        <img src="https://images.pexels.com/photos/162389/lost-places-old-decay-ruin-162389.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-    </li>
-    <li>
-        <p>Project Manager</p>
-        <img src="https://images.pexels.com/photos/220836/pexels-photo-220836.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-    </li>
-    <li>
-        <p>Compueter Arts</p>
-        <img src="https://images.pexels.com/photos/33283/stack-of-books-vintage-books-book-books.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-    </li>
-</ul> -->
+  {{/each}}
+</div>

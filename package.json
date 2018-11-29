@@ -4,9 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-      "start": "node server.js",
-      "test": "mocha test/test_*.js",
-      "test-watch": "nodemon --exec 'npm test'"
+    "test": "mocha test/test_*",
+    "test-watch": "nodemon --exec 'npm test'"
   },
   "repository": {
     "type": "git",

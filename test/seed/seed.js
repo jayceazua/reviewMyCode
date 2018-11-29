@@ -16,6 +16,7 @@ const populateCodePosts = (done) => {
     CodeSample.deleteMany({}).then(() => {
         let codePostOne = new CodeSample(codePosts[0]).save();
         let codePostTwo = new CodeSample(codePosts[1]).save();
+        // Promise all method waits for all promises to resolve.
         return Promise.all([codePostOne, codePostTwo])
     }).then(() => done());
 }

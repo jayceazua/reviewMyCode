@@ -1,15 +1,21 @@
-<meta name="id" content="{{code._id}}">
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-1">
 
-<h1 style="font-size:32pt;">{{code.title}}</h1>
+    <meta name="id" content="{{code._id}}">
 
-<p style="font-size:16pt;font-style:normal;font-weight:lighter;">{{code.description}}</p>
+    <h1 style= "font-size:32pt;" >{{code.title}}</h1>
+
+    <p style= "font-size:16pt;font-style:normal;font-weight:lighter;" >{{code.description}}</p>
 <!-- explain this ... -->
-<pre> <code> {{{code.codeSnippet}}} </code> </pre>
+    <pre> <code> {{{code.codeSnippet}}} </code> </pre>
 
-<p><a href="{{code.linkToRepo}}">{{code.linkToRepo}}</a></p>
+    <p><a href="{{code.linkToRepo}}">{{code.linkToRepo}}</a></p>
 
-<p><a href="/codeSamples/{{code._id}}/edit">Edit</a></p>
+    <p><a href="/codeSamples/{{code._id}}/edit">Edit</a></p>
 
-<form method="POST" action="/codeSamples/{{code._id}}?_method=DELETE">
-    <button type="submit">Delete</button>
-</form>
+    <p><form method="POST" action="/codeSamples/{{code._id}}?_method=DELETE">
+        <button class="btn btn-primary" type="submit">Delete</button>
+
+    </form></p>
+  </div>
+</div>

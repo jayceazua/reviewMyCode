@@ -138,8 +138,8 @@ describe('CRUD Routes: ', () => {
                     expect(data.length).to.equal(2) // make sure it did not create a 3rd entry
                     // make sure it redirects
                     expect(res).to.redirect;
-                    // expect(res.redirects[0]).to.include(data[0]._id); // makes sure the redirect url includes the Id
-                    // expect(res.req.path).to.not.equal(`${app.mountpath}`); // makes sure it redirected
+                    expect(res.redirects[0]).to.include(data[0]._id); // makes sure the redirect url includes the Id
+                    expect(res.req.path).to.not.equal(`${app.mountpath}`); // makes sure it redirected
                     return done()
                 })
                 .catch(e => done(e));

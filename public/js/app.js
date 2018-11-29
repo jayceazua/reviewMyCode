@@ -1,2 +1,5 @@
+// NO! jQuery
 "use strict";
-console.log('Connected.');
+
+
+console.log('Connected')
