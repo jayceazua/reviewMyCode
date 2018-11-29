@@ -4,7 +4,8 @@ mongoose.Promise = global.Promise;
 const dbname = process.env.DB_NAME;
 const dbpassword = process.env.DB_PASSWORD;
 const dbuser = process.env.DB_USER;
-const dbURI = process.env.MONGODB_URI || `mongodb://${dbuser}:${dbpassword}@ds115283.mlab.com:53552/${dbname}`;
+const dbURI = process.env.MONGODB_URI || `mongodb://${dbuser}:${dbpassword}@ds153552.mlab.com:53552/code-review`;
+
 //
 mongoose.connect(dbURI, { useNewUrlParser: true });
 mongoose.connection.once('open', () => {
