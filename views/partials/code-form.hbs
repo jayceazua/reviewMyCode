@@ -1,27 +1,22 @@
-<fieldset>
-  <legend>Code Sample</legend>
-  {{!-- <!-- <meta name="id" content="{{codes._id}}"> --> --}}
-
+<div class="form-container">
   <!-- TITLE -->
-  <div class="form-group">
-    <label for="code-title">Title</label><br>
-    <input class="form-control" id="code-title" type="text" name="title" value="{{codes.title}}"/>
+  <div class="form-title">
+    <label for="code-title">Title:</label><br>
+    <input class="form-title" id="code-title" type="text" name="title" value="{{codes.title}}"/>
   </div>
-
   <!-- DESCRIPTION -->
-  <div class="form-group">
-    <label for="code-description">Description</label><br>
-    <textarea class="form-control" id="code-description" name="description" rows="4" >{{codes.description}}</textarea>
+  <div class="form-description">
+    <label for="code-description">Description:</label><br>
+    <textarea class="form-description" id="code-description" name="description" rows="8" >{{codes.description}}</textarea>
   </div>
 <!-- CODE SNIPPET -->
-  <div class="form-group">
-    <label for="code-snippet">Code</label><br>
-    <textarea class="form-control" id="code-snippet" name="codeSnippet" rows="8" >{{{codes.codeSnippet}}}</textarea>
+  <div class="form-snippet">
+    <label for="code-snippet">Code:</label><br>
+    <textarea class="form-snippet" id="code-snippet" name="codeSnippet" rows="28" >{{{codes.codeSnippet}}}</textarea>
   </div>
 <!-- CODE REPO -->
-  <div class="form-group">
-    <label for="repo-link">Link to Repository</label><br>
-    <input class="form-control" id="repo-link" type="url" name="linkToRepo" value="{{codes.linkToRepo}}"/>
+  <div class="form-link">
+    <label for="repo-link">Link to Repository:<small>(Optional)</small></label><br>
+    <input class="form-link" id="repo-link" type="url" name="linkToRepo" value="{{codes.linkToRepo}}"/>
   </div>
-
-</fieldset>
+</div>

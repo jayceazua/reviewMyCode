@@ -1,15 +1,18 @@
-<meta name="id" content="{{code._id}}">
+<div class="show-container">
 
-<h1 style="font-size:32pt;">{{code.title}}</h1>
+      <h1 class="show-title">{{code.title}}</h1>
 
-<p style="font-size:16pt;font-style:normal;font-weight:lighter;">{{code.description}}</p>
-<!-- explain this ... -->
-<pre> <code> {{{code.codeSnippet}}} </code> </pre>
+      <p class="show-description">{{code.description}}</p>
 
-<p><a href="{{code.linkToRepo}}">{{code.linkToRepo}}</a></p>
+      <pre> <code class="show-snippet"> {{{code.codeSnippet}}} </code> </pre>
 
-<p><a href="/codeSamples/{{code._id}}/edit">Edit</a></p>
+      <p><a class="show-link" href="{{code.linkToRepo}}">{{code.linkToRepo}}</a></p>
 
-<form method="POST" action="/codeSamples/{{code._id}}?_method=DELETE">
+      <p><a class="show-edit-link" href="/codeSamples/{{code._id}}/edit">Edit</a></p>
+
+</div>
+
+
+<!-- <form method="POST" action="/codeSamples/{{code._id}}?_method=DELETE">
     <button type="submit">Delete</button>
-</form>
+</form> -->

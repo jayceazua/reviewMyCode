@@ -1,186 +1,103 @@
-body{
-	padding: 3%;
-	margin: 0;
-	background-color: #262626;
-}
-
-/* HEADER */
-#top{
-	display: grid;
-	box-sizing: border-box;
-	position: relative;
-	grid-template-columns: 2fr 8fr 1fr;
- 	grid-template-rows: 50px;
- 	grid-template-areas:
- 	 	"logo menu icon"
-}
-
-/* Logo */
-.logo{
-	grid-area: logo;
-	margin-left:50px;
-	display: grid;
-	justify-items: center;
-}
-.logo p{
-	color: #fff;
-	padding:0;
-	margin: 0;
-	cursor: pointer;
-}
-.logo > .logo-top{
-	text-decoration: none;
-	text-transform: uppercase;
-	font-family:Arial;
-	font-weight: bold;
-	font-size: 20px;
-}
-.logo > .logo-bottom{
-	text-decoration: none;
-	font-family:Vivaldi;
-	font-size: 20px;
-}
-
-/* Menu */
-.menu ul{
-	display:flex;
-	box-sizing: border-box;
-}
-.menu ul li{
-	list-style: none;
-	padding: 0 30px 0 0;
-	box-sizing: border-box;
-}
-.menu ul li a{
-	display: block;
-	position: relative;
-	text-decoration: none;
-	color: #666666;
-	font-family:arial;
-	transition:.5s;
-}
-.menu ul li a:hover{
-	color: #fff;
-}
-.menu ul li a:before{
-	content: "";
-	display: block;
-	width: 100%;
-	height: 1.5px;
-	position: absolute;
-	bottom: -40%;
-	background-color: #fff;
-	transform: scaleX(0);
-	transition: .5s;
-}
-.menu ul li a:hover:before{
-	transform: scaleX(1);
-}
-
-/* Icon */
-.icon{
-	color:#666666;
-	margin-top:-4%;
-}
-
-/* MAIN */
-#main{
-	padding-top: 25px;
-}
-
-/* Image */
-.image img{
-	width: 100%;
-	height: 100%;
-	box-sizing: border-box;
-	box-shadow: -5px 5px 20px #000,5px 5px 20px #000;
-	cursor: pointer;
-}
-.image ul{
-	list-style: none;
-	margin: 0;
-	padding:0;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr 1fr;
-	grid-gap: 1px;
-}
-.image p{
-	background:#f2f2f2;
-	padding: 0;
-	margin: 0;
-	width: 100%;
-	height: 15%;
-	display: inline-flex;
+.form-container, .form-container * {
+  display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
-	color: #333;
-	font-family: sans-serif;
-	font-size: 1.1em;
-	transition: .5s;
-	cursor: pointer;
-}
-.image ul li:nth-child(5){
-	height:100%;
-}
-.image ul li:hover p{
-	color: #f2f2f2;
-	background-color: #333
-}
-.image ul li img:hover{
-	background: black;
-	opacity: 0.9;
+  width: 100%;
 }
 
-/* Media */
-@media(min-width: 600px) and (max-width:1000px){
-	.image ul{
-		list-style: none;
-		margin: 0;
-		padding:0;
-		display: grid;
-		grid-template-columns: repeat(2,minmax(auto,28em));
-		grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-		grid-gap: 1px;
-	}
-	#top{
-		display: grid;
-		box-sizing: border-box;
-		position: relative;
-		grid-template-columns: 1fr;
- 		grid-template-rows: 1fr 1fr;
- 		justify-items: center;
- 		grid-template-areas:
- 		"logo logo"
- 		"menu menu"
- 	 }
- 	 .icon{
-	display: none;
-	}
+.form-container {
+  margin-top: 5vh;
 }
-@media(min-width: 200px) and (max-width:600px){
-	.image ul{
-		list-style: none;
-		margin: 0;
-		padding:0;
-		display: grid;
-		grid-template-columns: repeat(1,minmax(auto,40em));
-		grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-		grid-gap: 1px;
-	}
-	#top{
-		display: grid;
-		box-sizing: border-box;
-		position: relative;
-		grid-template-columns: 1fr;
- 		grid-template-rows: 1fr;
- 		justify-items: center;
- 		grid-template-areas:
- 		"logo"
- 		"menu"
- 	 }
- 	 .icon{
-	display: none;
-	}
+
+.form-container * {
+  width: 80%;
+}
+
+.show-container {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  width: 100%;
+  margin-left: 10%;
+}
+
+.show-container * {
+  width: 20%;
+}
+
+.show-container p, a, h1 {
+  color: tomato;
+  text-decoration: none;
+}
+
+.form-container * textarea,input {
+  background-color: #111;
+  color: #ff3223;
+  border: none;
+  margin: 4px;
+  padding: 10px;
+  border-radius: 10px;
+  overflow: none;
+  resize: none;
+}
+
+.form-container * textarea:not(.form-snippet), input:not(.form-link), .show-title, .show-description {
+  font-family: 'Acme', sans-serif;
+  letter-spacing: 1pt;
+}
+
+.form-container * textarea {
+  max-width: 80%;
+  min-width: 80%;
+  max-height: 70vh;
+}
+
+.form-title, .show-title {
+  font-size: 32px;
+}
+
+.form-link, .show-link {
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.show-link, .show-edit-link {
+  text-decoration: none;
+  font-size: 18px;
+  /* color: #123356; */
+}
+
+.show-link {
+  color: #123456;
+}
+
+.show-snippet {
+  color: #aaa;
+}
+
+.form-snippet {
+  /* This doesnt really matter bc codemirror will be added */
+}
+
+.form-container * label {
+  font-family: 'Changa', sans-serif;
+  font-size: 32px;
+  color: #755;
+  white-space: pre-wrap;
+}
+
+button[type="submit"] {
+  color: #aaa;
+  background-color: #111;
+  border: none;
+  border-radius: 100vh;
+  font-size: 24px;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-left: 65vw;
+  margin-top: 50px;
 }
