@@ -1,6 +1,1 @@
-"use strict";
-console.log('Connected.');
-// var myCodeMirror = CodeMirror.fromTextArea(myTextArea);
-
-
-// fetch() delete method on it. ajax
+console.log("Use fetch method for the frontend delete mthod...")
