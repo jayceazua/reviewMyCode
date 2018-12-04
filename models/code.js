@@ -16,6 +16,10 @@ const CodeSchema = new Schema({
   },
   linkToRepo: {
     type: String,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
   }
 });
 

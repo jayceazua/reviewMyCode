@@ -6,7 +6,7 @@ const Code = require('../models/code');
 // INDEX
 router.get('/', (req, res) => {
   Code.find({}).then((codes) => {
-    res.render('code-index', { codes });
+    res.render('code-index', {codes});
   }).catch((err) => res.send(err.message))
 });
 
@@ -22,13 +22,6 @@ router.post('/codeSamples', (req, res) => {
   }).catch((err)=> res.send(err.message))
 });
 
-// SHOW
-router.get('/codeSamples/:id', (req, res) => {
-  Code.findById(req.params.id).then((code) => {
-    res.render('code-show', { code })
-  }).catch(err => res.send(err.message))
-});
-
 // EDIT
 router.get('/codeSamples/:id/edit', (req, res) => {
   Code.findById(req.params.id).then(codes => {
@@ -36,19 +29,25 @@ router.get('/codeSamples/:id/edit', (req, res) => {
   }).catch(err => res.send(err.message))
 });
 
-// UPDATE
-router.patch('/codeSamples/:id', (req, res) => { // put difference patch
-  Code.findByIdAndUpdate(req.params.id, req.body).then((codes) => {
-    res.redirect(`/`);
-  }).catch((err) => res.send(err.message));
-});
 
-
-// DELETE
-router.delete('/codeSamples/:id', (req, res) => {
-  Code.findByIdAndRemove(req.params.id).then(() => {
-    res.redirect("/")
-  }).catch((err) => res.send(err.message))
-});
+router.route('/codeSamples/:id')
+  // SHOW
+  .get((req, res) => {
+    Code.findById(req.params.id).then((code) => {
+      res.render('code-show', {code})
+    }).catch(err => res.send(err.message))
+  })
+  // UPDATE
+  .patch((req, res) => { // put difference patch
+    Code.findByIdAndUpdate(req.params.id, req.body).then((codes) => {
+      res.redirect(`/codeSamples/${codes._id}`);
+    }).catch((err) => res.send(err.message));
+  })
+  // DELETE
+  .delete((req, res) => {
+    Code.findByIdAndRemove(req.params.id).then((codes) => {
+      res.redirect(`/`)
+    }).catch((err) => res.send(err.message))
+  })
 
 module.exports = router

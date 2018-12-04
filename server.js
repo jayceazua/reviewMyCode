@@ -1,13 +1,10 @@
 require('dotenv').config();
 const path = require('path');
 const express = require('express');
-const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const hbs = require('express-handlebars');
 const app = express();
 const port = process.env.PORT || 3000;
-const https = require('https');
-const http = require('http');
 
 // database connection goes here
 require('./database/mongooseConnection');
@@ -22,9 +19,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 
-// BODY-PARSER
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+// EXPRESS replaced body-parser
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 // override with POST having ?_method=DELETE & ?_method=PUT
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(methodOverride('_method'));
@@ -36,8 +33,8 @@ app.use(methodOverride((req, res) => {
   }
 }));
 
-const codeController = require('./controllers/codeSamples');
 // Call in the ROUTES
+const codeController = require('./controllers/codeSamples');
 app.use(codeController);
 
 app.listen(port, () => {

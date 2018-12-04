@@ -19,20 +19,21 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  width: 100%;
+  width: 80%;
   margin-left: 10%;
 }
 
 .show-container * {
-  width: 20%;
+  width: 80%;
 }
 
 .show-container p, a, h1 {
-  color: tomato;
+  color: #a22;
   text-decoration: none;
 }
 
-.form-container * textarea,input {
+/* .form-container * textarea, .form-continer input { */
+.form-container * *:not(label):not(select) {
   background-color: #111;
   color: #ff3223;
   border: none;
@@ -43,7 +44,7 @@
   resize: none;
 }
 
-.form-container * textarea:not(.form-snippet), input:not(.form-link), .show-title, .show-description {
+.form-container * textarea:not(.form-snippet), .form-container * input:not(.form-link), .show-title, .show-description {
   font-family: 'Acme', sans-serif;
   letter-spacing: 1pt;
 }
@@ -65,13 +66,19 @@
 }
 
 .show-link, .show-edit-link {
-  text-decoration: none;
+  text-decoration: underline;
   font-size: 18px;
-  /* color: #123356; */
+  color: #500000;
+}
+
+.show-edit-link {
+  font-size: 28px;
+  font-family: 'impact';
+  letter-spacing: 3px;
 }
 
 .show-link {
-  color: #123456;
+  font-weight: bolder;
 }
 
 .show-snippet {
@@ -89,7 +96,7 @@
   white-space: pre-wrap;
 }
 
-button[type="submit"] {
+button, .button {
   color: #aaa;
   background-color: #111;
   border: none;
@@ -98,6 +105,28 @@ button[type="submit"] {
   padding: 10px;
   padding-left: 25px;
   padding-right: 25px;
-  margin-left: 65vw;
   margin-top: 50px;
+}
+
+.delete-button {
+  background-color: red;
+}
+
+.new-button {
+  background-color: blue;
+}
+
+.save-button {
+  background-color: green;
+}
+
+.button-container {
+  display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  margin-right: 15%;
+}
+
+.button-container * {
+  margin-left: 25px;
 }

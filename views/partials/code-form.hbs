@@ -11,12 +11,20 @@
   </div>
 <!-- CODE SNIPPET -->
   <div class="form-snippet">
-    <label for="code-snippet">Code:</label><br>
+    <label for="code-snippet">Code:</label>
+    <select name="snippet-language" select={{codes.codeLanguage}}>
+      <option value=java>Java</option>
+      <option value=python>Python</option>
+      <option value=javascript>Javascript</option>
+      <option value=c>C</option>
+      <option value=c++>C++</option>
+    </select>
+    <br>
     <textarea class="form-snippet" id="code-snippet" name="codeSnippet" rows="28" >{{{codes.codeSnippet}}}</textarea>
   </div>
 <!-- CODE REPO -->
   <div class="form-link">
-    <label for="repo-link">Link to Repository:<small>(Optional)</small></label><br>
+    <label for="repo-link">Link to Repository: (Optional)</label><br>
     <input class="form-link" id="repo-link" type="url" name="linkToRepo" value="{{codes.linkToRepo}}"/>
   </div>
 </div>
