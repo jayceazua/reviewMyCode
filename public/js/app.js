@@ -1,2 +1,1 @@
-"use strict";
-console.log('Connected.');
+console.log("Use fetch method for the frontend delete mthod...")

@@ -4,8 +4,10 @@
         <ul>
             {{#each codes}}
                 <li>
-                    <p><a href="/codeSamples/{{this._id}}">{{this.title}}</a></p>
+                  <a href="/codeSamples/{{this._id}}">
+                    <p>{{this.title}}</p>
                     <img src="https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+                  </a>
                 </li>
             {{/each}}
         </ul>
