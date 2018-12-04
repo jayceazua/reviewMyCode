@@ -5,10 +5,6 @@ const methodOverride = require('method-override');
 const hbs = require('express-handlebars');
 const app = express();
 const port = process.env.PORT || 3000;
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 
 // database connection goes here
 require('./database/mongooseConnection');
