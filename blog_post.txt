@@ -1,0 +1,7 @@
+what problem did you select and why? Hypothesis on solutions? Skepticisms? Curiosities? Questions?
+
+I found myself with nobody to ask to review my code, nobody to tell me what to improve. So I went about creating a platform where these problems no longer exist, a place where collaboration is expressly encouraged. enjoy as I take you on the epic journey which is development.
+
+initial trepidation of how anything like this would be received by the masses, would I have the motivation to follow through with my ideas. but I decided to ignore those concerns and, for lack of better terms, just do it.
+
+.
