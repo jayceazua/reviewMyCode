@@ -1,7 +1,24 @@
-what problem did you select and why? Hypothesis on solutions? Skepticisms? Curiosities? Questions?
 
-I found myself with nobody to ask to review my code, nobody to tell me what to improve. So I went about creating a platform where these problems no longer exist, a place where collaboration is expressly encouraged. enjoy as I take you on the epic journey which is development.
+I found myself with nobody to ask to review my code, nobody to tell me what to improve.
+So I went about creating a platform where these problems no longer exist, a place where collaboration is
+expressly encouraged. enjoy as I take you on the epic journey which is development.
 
-initial trepidation of how anything like this would be received by the masses, would I have the motivation to follow through with my ideas. but I decided to ignore those concerns and, for lack of better terms, just do it.
+initial trepidation of how anything like this would be received by the masses, would I have the motivation to follow
+through with my ideas. but I decided to ignore those concerns and, for lack of better terms, just do it.
 
-.
+
+I help software developers, achieve increased collaboration of both convention and configuration of code,
+through a website where open discussion and review of submitted code samples can be had.
+
+Sprint Planning - A meeting to determine what will happen in the next sprint based on what needs to get done and the teams capacity to work.
+
+Sprint Retrospective - A meeting in the time between a sprint and the next sprint planning where the team assess the previous sprint.
+  Considering what went well and what didn't and then making a plan for improving what didn't go as well as expected in future sprints
+  or ensuring that the well done actions are able to be repeated.
+
+Doing sprint plannings and retrospectives helps teams coordinate efforts to achieve a larger goal and also
+improve the methods to achieve a larger goal. As a team Jayce Azua and I, Jeremy James, stated at various points in time that certain things
+needed to get done and then we set about doing them.
+
+Problems -
+  None!
