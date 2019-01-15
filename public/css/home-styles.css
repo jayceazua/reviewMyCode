@@ -23,6 +23,7 @@ body{
 	justify-items: center;
 	align-items: center;
 }
+
 .logo p{
 	color: #ddd;
 	padding:0;
@@ -31,12 +32,14 @@ body{
 	line-height: 20px;
 	font-family: 'Monoton', cursive;
 }
+
 .logo .logo-top{
 	text-decoration: none;
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 20px;
 }
+
 .logo .logo-bottom{
 	text-decoration: none;
 	font-size: 30px;
@@ -47,11 +50,13 @@ body{
 	display:flex;
 	box-sizing: border-box;
 }
+
 .menu ul li{
 	list-style: none;
 	padding: 0 30px 0 0;
 	box-sizing: border-box;
 }
+
 .menu ul li a{
 	display: block;
 	position: relative;
@@ -61,9 +66,11 @@ body{
 	font-size: 25px;
 	transition:.5s;
 }
+
 .menu ul li a:hover{
 	color: #aaa;
 }
+
 .menu ul li a:before{
 	content: "";
 	display: block;
@@ -75,6 +82,7 @@ body{
 	transform: scaleX(0);
 	transition: .5s;
 }
+
 .menu ul li a:hover:before{
 	transform: scaleX(1);
 }
@@ -98,6 +106,7 @@ body{
 	box-shadow: -5px 5px 20px #000,5px 5px 20px #000;
 	cursor: pointer;
 }
+
 .image ul{
 	list-style: none;
 	margin: 0;
@@ -106,7 +115,9 @@ body{
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr;
 	grid-gap: 25px;
+	grid-row-gap: 50px;
 }
+
 .image p{
 	background:#bbb;
 	padding: 0;
@@ -123,9 +134,11 @@ body{
 	transition: .5s;
 	cursor: pointer;
 }
+
 .image ul li:nth-child(5){
 	height:100%;
 }
+
 .image ul li:hover p{
 	color: #aaa;
 	background-color: #333
@@ -145,6 +158,7 @@ body{
 		grid-template-columns: repeat(2,minmax(auto,28em));
 		grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
 		grid-gap: 10px;
+		grid-row-gap: 60px;
 	}
 	#top{
 		display: grid;
@@ -161,6 +175,7 @@ body{
 			display: none;
 	 }
 }
+
 @media(min-width: 200px) and (max-width:600px){
 	.image ul{
 		list-style: none;

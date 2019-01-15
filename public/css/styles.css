@@ -33,7 +33,7 @@
 }
 
 /* .form-container * textarea, .form-continer input { */
-.form-container * *:not(label):not(select) {
+.form-container * *:not(label) {
   background-color: #111;
   color: #ff3223;
   border: none;

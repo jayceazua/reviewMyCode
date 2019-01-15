@@ -1,14 +1,8 @@
-<!-- <div class="button-container"> -->
 <form method="POST" action="/codeSamples/{{codes._id}}?_method=PATCH">
     {{> code-form }}
     <div class="button-container">
       <input class="button" type="button" onclick="window.location.replace('/codeSamples/{{codes._id}}')" value="Cancel" />
       <button class="save-button" type="submit">Save Edits</button>
-      <!-- <input class="button" type="button" onclick="window.location.replace('/codeSamples/{{codes._id}}/?_method=DELETE')" value="Delete" /> -->
-      <!-- <form method="POST" action="/codeSamples/{{codes._id}}?_method=DELETE"> -->
-        <button class="button delete-button" type="submit" formaction="/codeSamples/{{codes._id}}" formmethod="" >Delete</button>
-      <!-- </form> -->
+      <button class="button delete-button" type="submit" formaction="/codeSamples/{{codes._id}}?_method=DELETE" >Delete</button>
     </div>
 </form>
-
-<!-- </div> -->

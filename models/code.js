@@ -14,6 +14,10 @@ const CodeSchema = new Schema({
     type: String,
     required: true
   },
+  codeLanguage: {
+    type: String,
+    required: true
+  },
   linkToRepo: {
     type: String,
   },
